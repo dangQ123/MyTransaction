@@ -33,7 +33,7 @@ public class Main {
         transactionByTime.addData(b);
         transactionByTime.addData(c);
         //开始执行
-        transactionByTime.operateByTime();
+        transactionByTime.operate();
     }
 
 }

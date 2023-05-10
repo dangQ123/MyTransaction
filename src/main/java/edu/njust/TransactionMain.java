@@ -38,7 +38,7 @@ public class TransactionMain {
     }
 
     //进行事务调度
-    public void operateByTime(){
+    public void operate(){
         //遍历事务
         for (int i = 0; i < maxSize; i++) {
             for (Transaction transaction : this.transcationList) {
@@ -54,7 +54,7 @@ public class TransactionMain {
                         //类型为读并且读可实现
                         if (transaction.TS> data.WT) {
                             data.RT = transaction.TS;
-                            System.out.println("元素" + data.name + "读时间置为：" + data.RT);
+                            System.out.println("元素" + data.name + "读时间重置为：" + data.RT);
                         } else {
                             transaction.status = false;
                             System.out.println("读时间在写时间前，回滚");
@@ -65,7 +65,7 @@ public class TransactionMain {
                             //类型为写且可实现，需要执行
                             if (transaction.TS >= data.WT) {
                                 data.WT = transaction.TS;
-                                System.out.println("元素" + data.name + "写时间置为：" + data.WT);
+                                System.out.println("元素" + data.name + "写时间重置为：" + data.WT);
                             }
                         } else {
                             transaction.status = false;
