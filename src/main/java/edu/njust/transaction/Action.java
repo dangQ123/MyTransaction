@@ -7,10 +7,13 @@ public class Action {
     public String dataName;
     //操作的类型
     public String type;
+    //所属事务
+    public int order;
 
-    public Action(String dataName, String type) {
+    public Action(String dataName, String type, int order) {
         this.dataName = dataName;
         this.type = type;
+        this.order = order;
     }
 
 }
