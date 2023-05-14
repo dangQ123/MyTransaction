@@ -11,4 +11,8 @@ public class Transaction {
         this.TS = TS;
     }
 
+    public Transaction(){
+        TS = 0;
+    }
+
 }
