@@ -15,4 +15,8 @@ public class Transaction {
         TS = 0;
     }
 
+    public Transaction(int TS, boolean status) {
+        this.TS = TS;
+        this.status = status;
+    }
 }
